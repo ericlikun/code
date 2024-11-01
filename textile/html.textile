@@ -1,0 +1,220 @@
+h2. Textile 语法速查
+
+p{color:#999}. 2023-08-17
+
+<style>
+h3:not(.demo h3) { margin-top: 5rem }
+</style>
+
+h3. 行内元素
+
+|_.  |_. 语法 |_. 语法（英） |_. 备注 |
+| _强调_ | <notextile>_强调_</notextile> | <notextile>_em_</notextile> | |
+| *加粗* | <notextile>*加粗*</notextile> | <notextile>*strong*</notextile> | |
+| __加粗斜体__ | <notextile>__粗斜体__</notextile> | <notextile>__bold-italic__</notextile>	 | |
+| @代码@ | <notextile>@代码@</notextile> | <notextile>@code@</notextile> | |
+| ??引文?? | <notextile>??引文??</notextile> | <notextile>??citation??</notextile> | |
+| -删除线- | <notextile>-删除线-</notextile> | <notextile>-strikethrough-</notextile>	  | |
+| +插入+ | <notextile>+插入+</notextile> | <notextile>+insertion+</notextile> | |
+| %span% | <notextile>%span%</notextile> | <notextile>%span%</notextile> | HTML tag |
+| %{color:red}CSS格式化% | <notextile>%{color:red}CSS格式化%</notextile> | <notextile>%{color:red}formatting%</notextile> | CSS styles |
+
+h3. 标题
+
+|_.  |_. 语法 |_. 语法（英） |
+| 标题一 | <notextile>h1. 标题一</notextile> | <notextile>h1. Header 1</notextile> |
+| 标题二 | <notextile>h2. 标题二</notextile> | <notextile>h2. Header 2</notextile> |
+| 标题三 | <notextile>h3. 标题三</notextile> | <notextile>h3. Header 3</notextile> |
+| 标题四 | <notextile>h4. 标题四</notextile> | <notextile>h4. Header 4</notextile> |
+| 标题五 | <notextile>h5. 标题五</notextile> | <notextile>h5. Header 5</notextile> |
+| 标题六 | <notextile>h6. 标题六</notextile> | <notextile>h6. Header 6</notextile> |
+
+示例：
+
+<div class="demo">
+
+h1. 标题一
+
+h2. 标题二
+
+h3. 标题三
+
+h4. 标题四
+
+h5. 标题五
+
+h6. 标题六
+
+</div>
+
+h3. 块引用
+
+|_.  |_. 语法 |_. 语法（英） |
+| 块引用 | <notextile>bq. 块引用</notextile> | <notextile>bq. Header 1</notextile> |
+
+示例：
+
+bq. Blockquote
+
+
+h3. 指定 classname
+
+|_.  |_. 语法 |_. 语法（英） |
+| 指定 class | <notextile>p(classname). 文字.</notextile> | <notextile>p(classname). Text.</notextile> |
+
+<style>
+  .my_class {
+    display: inline-block;
+    padding: 1em;
+    border: dotted 1px red;
+  }
+</style>
+
+示例：
+
+用 classname 指定 css 样式
+
+bc.. <style>
+  .my_class {
+    display: inline-block;
+    padding: 1em;
+    border: dotted 1px red;
+  }
+</style>
+
+p. 
+
+p(my_class). 我是 class 属性为 my_class 的段落.
+
+
+h3. 指定 id
+
+|_.  |_. 语法 |_. 语法（英） |
+| 指定 id | <notextile>p(#id). 文字.</notextile> | <notextile>p(#id). Text.</notextile> |
+
+<style>
+  #my_id {
+    display: inline-block;
+    padding: 1em;
+    border: dashed 1px blue;
+  }
+</style>
+
+示例：
+
+用 id 指定 css 样式
+
+bc.. <style>
+  #my_id {
+    display: inline-block;
+    padding: 1em;
+    border: dashed 1px blue;
+  }
+</style>
+
+p. 
+
+
+p(#my_id). id 属性为 my_id 的段落.
+
+
+h3. 有序列表
+
+|_.  |_. 语法 |_. 语法（英） |
+| 有序列表 | <notextile># 项目一</notextile><br><notextile># 项目二</notextile>  | <notextile># ordered item 1</notextile><br><notextile># ordered item 2</notextile> |
+
+示例：
+
+# 飞狐外传
+# 雪山飞狐
+
+
+
+h3. 无序列表
+
+|_.  |_. 语法 |_. 语法（英） |
+| 无序列表 | <notextile>* 项目甲方</notextile><br><notextile>* 项目乙方</notextile>  | <notextile>* unordered item 1</notextile><br><notextile>* unordered item 2</notextile> |
+
+示例：
+
+* 绊脚石计划
+* 黑石楠计划
+
+
+
+h3. 列表缩进
+
+|_.  |_. 语法 |_. 语法（英） |
+| 列表缩进 | <notextile># 列表 1</notextile><br><notextile>## 缩进的子项 11</notextile><br><notextile>## 缩进的子项 12</notextile> | <notextile># ordered item 1</notextile><br><notextile>## ordered item 11</notextile><br><notextile>## ordered item 12</notextile> |
+
+示例：
+
+# 威廉·莎士比亚
+## 哈姆雷特
+## 李尔王
+## 麦克白
+## 奥赛罗
+# J·K·罗琳
+## 哈利波特与魔法石
+## 哈利波特与密室
+
+h3. 链接
+
+|_.  |_. 语法 |_. 语法（英） |
+| "链接":textile.html | <notextile>"链接":textile.html</notextile> | <notextile>"Hypertext":index.html</notextile> | 
+| "引用链接":link | <notextile>"引用链接":link<br><br>[link]http://www.tt4e.com</notextile> | <notextile>"Text link":link<br><br>[link]http://link.com</notextile> |
+
+[link]http://www.tt4e.com
+
+h3. 图片
+
+|_.  |_. 语法 |_. 语法（英） |
+| !/images/2.png(这是 title 属性)! | <notextile>!/images/2.png(这是 title 属性)!</notextile> | <notextile>!image.jpg(title text)!</notextile> | 
+
+示例：
+
+带链接的图片
+
+!https://blog.tt4e.com/images/2.png!:https://blog.tt4e.com/images/2.png 
+
+class 具有 align-left 的图片
+
+!</images/2.png!
+
+class 具有 align-right 的图片
+
+!>/images/2.png!
+
+class 具有 align-center 的图片
+
+!=/images/2.png!
+
+这里的趣事，在先前的文章 "Textile 一种有烟火气的标记语言":/textile 中有提到。
+
+
+h3. HTML 实体
+
+|_.  |_. 语法 |_. 语法（英） |
+| (TM) | <notextile>(TM)</notextile> | <notextile>(TM)</notextile> | 
+| (R) | <notextile>(R)</notextile> | <notextile>(R)</notextile> | 
+| (C) | <notextile>(C)</notextile> | <notextile>(C)</notextile> | 
+
+h3. 脚注
+
+|_.  |_. 语法 |_. 语法（英） |
+| 脚注标记[1] | <notextile>脚注标记[1]</notextile> | <notextile>footnote marker[1]</notextile> | 
+
+fn1. 脚注：语法为 @fn1. 脚注@ 英文为 @fn1. footnote@，脚注标记支持在表格中使用，但脚注的总结索引不支持在表格中使用。
+
+示例：
+
+A table, a chair, a bowl of fruit and a violin; what else does a man need to be happy?[2]
+
+fn2. "Albert Einstein":http://www.brainyquote.com/quotes/quotes/a/alberteins148867.html
+
+
+h3. 小提示
+
+# 当标记正确，却无法正确显示时，看看前后是否需要增加空行
+# 当不知道如何结束标记时，试试 @p. @
+

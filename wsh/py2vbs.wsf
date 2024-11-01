@@ -1,0 +1,30 @@
+<?XML Version="1.0" encoding="ISO-8859-1"?>
+<?job error="true" debug="false"?>
+<package>
+    <job>
+    <script language="JScript">
+    <![CDATA[
+function jscriptOutput(str) {
+    WScript.Echo(str + " from JScript");
+}
+    ]]>
+    </script>
+    <script language="VBScript">
+    <![CDATA[
+public sub vbsOutput(str)
+    wscript.echo str & " from VBScript"
+    globals.jscriptOutput "hello"
+end sub
+    ]]>
+    </script>
+    <script language="Python">
+    <![CDATA[
+def pythonOutput():
+    WScript.Echo('hello from Python')
+    globals.vbsOutput('hello')
+
+pythonOutput()
+    ]]>
+    </script>
+    </job>
+</package>
