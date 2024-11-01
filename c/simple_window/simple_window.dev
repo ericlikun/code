@@ -1,0 +1,12 @@
+[Project]
+FileName=D:\code\github\ericlikun\code\c\simple_window\simple_window.dev
+Name=simple_window
+Use_gpp=0
+UnitCount=1
+ResFiles=D:\code\github\ericlikun\code\c\simple_window\rsrc.rc
+NoConsole=1
+IsDll=0
+Icon=D:\soft\dev-cpp-4\Bin\Mainicon.ico
+[Unit1]
+FileName=D:\code\github\ericlikun\code\c\simple_window\main.c
+FileTime=1499557516
