@@ -12,4 +12,3 @@ int WINAPI WinMain (HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmd, int nShow)
   
     return 0;
 }
-

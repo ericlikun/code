@@ -1,0 +1,2 @@
+RarReminder,WinRAR
+RarReminder,ad.winrar.com.cn
