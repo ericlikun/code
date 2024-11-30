@@ -29,20 +29,18 @@ int WINAPI WinMain (HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmd, int nShow) {
         lineCount++;
     }
     fclose(inputFile);
-
-    for (int i = 0; i < lineCount; i++) {
-        LPCSTR pParam1 = (strcmp(windowParamsArray[i].param1, "NULL") == 0) ? NULL : windowParamsArray[i].param1;
-        LPCSTR pParam2 = (strcmp(windowParamsArray[i].param2, "NULL") == 0) ? NULL : windowParamsArray[i].param2;
-
-        HWND hWnd;
-        while (1) {
+    
+    HWND hWnd;
+	while (1) {
+	    for (int i = 0; i < lineCount; i++) {
+	        LPCSTR pParam1 = (strcmp(windowParamsArray[i].param1, "NULL") == 0) ? NULL : windowParamsArray[i].param1;
+	        LPCSTR pParam2 = (strcmp(windowParamsArray[i].param2, "NULL") == 0) ? NULL : windowParamsArray[i].param2;
             hWnd = FindWindow(pParam1, pParam2);
-            if (hWnd!= NULL) {
+            if (hWnd != NULL) {
                 SendMessage(hWnd, WM_CLOSE, 0, 0);
             }
-            Sleep(1000);
-        }
-    }
-
+	    }
+        Sleep(1000);
+	}
     return 0;
 }
