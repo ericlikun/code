@@ -1,2 +1,3 @@
 RarReminder,WinRAR
 RarReminder,ad.winrar.com.cn
+NULL,通达信信息
