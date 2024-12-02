@@ -30,7 +30,7 @@ int WINAPI WinMain (HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmd, int nShow) {
         lineCount++;
     }
     fclose(inputFile);
-    
+
     HWND hWnd;
 	while (1) {
 	    for (int i = 0; i < lineCount; i++) {
@@ -38,10 +38,6 @@ int WINAPI WinMain (HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmd, int nShow) {
 	        LPCSTR pParam2 = (strcmp(windowParamsArray[i].param2, "NULL") == 0) ? NULL : windowParamsArray[i].param2;
             hWnd = FindWindow(pParam1, pParam2);
             if (hWnd == NULL) {
-	            MessageBox (NULL, TEXT (pParam2), TEXT (pParam1), 0) ;
-	            MessageBox (NULL, TEXT (GetLastError()), TEXT ("FindWindow failed, error code:"), 0) ;
-			} else {
-	            MessageBox (NULL, TEXT (pParam2), TEXT (pParam1), 0) ;
 			    SendMessage(hWnd, WM_CLOSE, 0, 0);
 			}
 	    }
