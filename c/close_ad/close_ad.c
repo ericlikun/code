@@ -38,7 +38,8 @@ int WINAPI WinMain (HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmd, int nShow) {
 	        LPCSTR pParam2 = (strcmp(windowParamsArray[i].param2, "NULL") == 0) ? NULL : windowParamsArray[i].param2;
             hWnd = FindWindow(pParam1, pParam2);
             if (hWnd == NULL) {
-			    SendMessage(hWnd, WM_CLOSE, 0, 0);
+			    SendMessage(hWnd, WM_CLOSE, 0, 0);			    
+
 			}
 	    }
         Sleep(1000);
